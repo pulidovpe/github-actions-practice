@@ -1,2 +1,2 @@
-# github-actions
+# github-actions-practice
 Github Action Practice
