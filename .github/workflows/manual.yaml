@@ -22,11 +22,13 @@ jobs:
     steps:
       - name: Decode File Content
         run: |
-          echo "${{ inputs.data }}" | base64 --decode > ./files/decoded_file.txt
+          echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
+        working-directory: files
       - name: Display Greeting
         run: |
           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
       - name: Display File Content
         run: |
           echo "Contents of the file:"
-          cat ./files/decoded_file.txt
+          cat ./decoded_file.txt
+        working-directory: infra
