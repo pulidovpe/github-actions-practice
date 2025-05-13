@@ -20,6 +20,8 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
+      - name: Create Directory
+        run: mkdir -p ${{ github.workspace }}/more-files
       - name: Decode File Content
         run: |
           echo "${{ inputs.data }}" | base64 --decode > ${{ github.workspace }}/more-files/decoded_file.txt
