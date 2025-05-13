@@ -22,11 +22,19 @@ jobs:
     steps:
       - name: Decode File Content
         run: |
+          pwd
+          ls -l
+          ls -l ${GITHUB_WORKSPACE}
+          ls -l ./
+          ls -l ./files
           echo "${{ inputs.data }}" | base64 --decode > ${GITHUB_WORKSPACE}/files/decoded_file.txt
+        working-directory: files
       - name: Display Greeting
         run: |
           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
       - name: Display File Content
         run: |
+          pwd
+          ls -l
           echo "Contents of the file:"
           cat ${GITHUB_WORKSPACE}/files/decoded_file.txt
