@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: "My step"
         env:
-          MY_ACTION: ${{ github.action_status }}
+          MY_REPO: ${{ github.repository }}
           MY_ACTOR: ${{ github.actor }}
         run: |
-          echo "Hello $MY_ACTION"
+          echo "This is my repo: $MY_REPO"
           echo "I'm $MY_ACTOR"
